@@ -1,4 +1,4 @@
-# Run For a local machine in Chrome.
+# Run For an automation test on the local machine.
 
 ![image](https://user-images.githubusercontent.com/70570645/171432631-dcc31b10-6590-4877-98c0-4ac702fbd441.png)
 
