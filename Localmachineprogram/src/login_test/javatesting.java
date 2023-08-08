@@ -37,11 +37,11 @@ public class javatesting {
 		Thread.sleep(2000);
 		// Enter your login email id
 		driver.findElement(By.id("email"))
-			.sendKeys("shubhamr@lambdatest.com");
+			.sendKeys("");
 
 		// Enter your login password
 		driver.findElement(By.id("password"))
-			.sendKeys("Gmail@123");
+			.sendKeys("");
 		driver.findElement(By.id("login-button"))
 	        .sendKeys(Keys.ENTER);
 		
