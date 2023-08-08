@@ -20,24 +20,12 @@ Before you can start performing Java Code, you would need to:
 - Add the jar files in 
 
 
-
-- You would have to add the following maven dependency to your `pom.xml` file if working on your local project.
-  ```xml
-  <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-  </dependency>
-  ```
-
 ### Cloning Repo And Installing Dependencies
 
 **Step 1:** Clone the LambdaTest’s JUnit-Selenium-Sample repository and navigate to the code directory as shown below:
 
 ```bash
 -git clone https://github.com/lambdatestsupport/Loginlocal.git
-Run As Application java
 
 -https://chromedriver.chromium.org/downloads
 -Download the Chromium and `set the path in Code
@@ -52,6 +40,7 @@ Now go to the Selenium driver downloaded file, select both these jar files and c
 3: Go to the same folder, open the “libs” folder, select all the jar files, and click on ‘Open’.
 After adding all these required Jar files, below is the given code to test the login page.
 
+Run As Application java
 ```
 
 * For **Linux/macOS**:
