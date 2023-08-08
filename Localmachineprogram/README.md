@@ -1,45 +1,25 @@
-# Run Selenium Tests With JUnit On LambdaTest
+# Run For a local machine in Chrome.
 
 ![image](https://user-images.githubusercontent.com/70570645/171432631-dcc31b10-6590-4877-98c0-4ac702fbd441.png)
 
-<p align="center">
-  <a href="https://www.lambdatest.com/blog/?utm_source=github&utm_medium=repo&utm_campaign=junit-selenium-sample" target="_bank">Blog</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.lambdatest.com/support/docs/?utm_source=github&utm_medium=repo&utm_campaign=junit-selenium-sample" target="_bank">Docs</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.lambdatest.com/learning-hub/?utm_source=github&utm_medium=repo&utm_campaign=junit-selenium-sample" target="_bank">Learning Hub</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.lambdatest.com/newsletter/?utm_source=github&utm_medium=repo&utm_campaign=junit-selenium-sample" target="_bank">Newsletter</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.lambdatest.com/certifications/?utm_source=github&utm_medium=repo&utm_campaign=junit-selenium-sample" target="_bank">Certifications</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.youtube.com/c/LambdaTest" target="_bank">YouTube</a>
-</p>
-&emsp;
-&emsp;
-&emsp;
 
-*Learn how to use JUnit framework to configure and run your Java automation testing scripts on the LambdaTest platform*
+
+
 
 [<img height="58" width="200" src="https://user-images.githubusercontent.com/70570645/171866795-52c11b49-0728-4229-b073-4b704209ddde.png">](https://accounts.lambdatest.com/register?utm_source=github&utm_medium=repo&utm_campaign=junit-selenium-sample)
 
 
 ## Table Of Contents
 
-* [Pre-requisites](#pre-requisites)
-* [Run Your First Test](#run-your-first-test)
-* [Parallel Testing With JUnit](#run-parallel-tests-using-junit)
-* [Local Testing With JUnit](#testing-locally-hosted-or-privately-hosted-projects)
-
 ## Pre-requisites
 
-Before you can start performing Java automation testing with Selenium, you would need to:
+Before you can start performing Java Code, you would need to:
 
 - Install the latest **Java development environment** i.e. **JDK 1.6** or higher. We recommend using the latest version.
 
-- Download the latest **Selenium Client** and its **WebDriver bindings** from the [official website](https://www.selenium.dev/downloads/). Latest versions of Selenium Client and WebDriver are ideal for running your automation script on LambdaTest Selenium cloud grid.
+- Add the jar files in 
 
-- Install **Maven** which supports **JUnit** framework out of the box. **Maven** can be downloaded and installed following the steps from [the official website](https://maven.apache.org/). Maven can also be installed easily on **Linux/MacOS** using [Homebrew](https://brew.sh/) package manager.
+
 
 - You would have to add the following maven dependency to your `pom.xml` file if working on your local project.
   ```xml
@@ -56,114 +36,41 @@ Before you can start performing Java automation testing with Selenium, you would
 **Step 1:** Clone the LambdaTest’s JUnit-Selenium-Sample repository and navigate to the code directory as shown below:
 
 ```bash
-git clone https://github.com/LambdaTest/junit-selenium-sample
-cd junit-selenium-sample
+-git clone https://github.com/lambdatestsupport/Loginlocal.git
+Run As Application java
+
+-https://chromedriver.chromium.org/downloads
+-Download the Chromium and `set the path in Code
+
+https://www.selenium.dev/downloads/
+You have to download the jar files in jav files
+1: Click on Classpath
+
+2: Initially alongside select Add External JARs.
+Now go to the Selenium driver downloaded file, select both these jar files and click on ‘Open
+
+3: Go to the same folder, open the “libs” folder, select all the jar files, and click on ‘Open’.
+After adding all these required Jar files, below is the given code to test the login page.
+
 ```
-
-You may also want to run the command below to check for outdated dependencies.
-
-```bash
-mvn versions:display-dependency-updates
-```
-
-### Setting Up Your Authentication
-
-Make sure you have your LambdaTest credentials with you to run test automation scripts. You can get these credentials from the [LambdaTest Automation Dashboard](https://automation.lambdatest.com/build?utm_source=github&utm_medium=repo&utm_campaign=junit-selenium-sample) or by your [LambdaTest Profile](https://accounts.lambdatest.com/login?utm_source=github&utm_medium=repo&utm_campaign=junit-selenium-sample).
-
-**Step 2:** Set LambdaTest **Username** and **Access Key** in environment variables.
 
 * For **Linux/macOS**:
   
-  ```bash
-  export LT_USERNAME="YOUR_USERNAME" 
-  export LT_ACCESS_KEY="YOUR ACCESS KEY"
-  ```
-  * For **Windows**:
-  ```bash
-  set LT_USERNAME="YOUR_USERNAME" 
-  set LT_ACCESS_KEY="YOUR ACCESS KEY"
-  ```
+  git clone https://github.com/lambdatestsupport/Loginlocal.git
+  Run As Application java
+  - for download a chromium here is the website https://chromedriver.chromium.org/downloads
+  -Download the Chromium and `set the path in Code
+-https://chromedriver.chromium.org/downloads
 
-## Run Your First Test
+https://www.selenium.dev/downloads/
+You have to download the jar files in jav files
+1: Click on Classpath
 
->**Test Scenario**: Checkout sample [JUnitTodo.java](https://github.com/LambdaTest/junit-selenium-sample/blob/master/src/test/java/com/lambdatest/JUnitTodo.java) file. This JUnit Selenium script tests a sample to-do list app by marking couple items as done, adding a new item to the list and finally displaying the count of pending items as output.
+2: Initially alongside select Add External JARs.
+Now go to the Selenium driver downloaded file, select both these jar files and click on ‘Open
 
-### Configuring your Test Capabilities
-
-**Step 3:** In the test script, you need to update your test capabilities. In this code, we are passing browser, browser version, and operating system information, along with LambdaTest Selenium grid capabilities via capabilities object. The capabilities object in the above code are defined as:
-
-```java
-DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName", "chrome");
-        //capabilities.setCapability("platform", "Windows 10"); // If this cap isn't specified, it will just get the any available one
-        capabilities.setCapability("build", "LambdaTestSampleApp");
-        capabilities.setCapability("name", "LambdaTestJavaSample");
-       // capabilities.setCapability("network", true); // To enable network logs
-       // capabilities.setCapability("visual", true); // To enable step by step screenshot
-       // capabilities.setCapability("video", true); // To enable video recording
-       // capabilities.setCapability("console", true); // To capture console logs
-```
-
-You can generate capabilities for your test requirements with the help of our inbuilt [Desired Capability Generator](https://www.lambdatest.com/capabilities-generator/?utm_source=github&utm_medium=repo&utm_campaign=junit-selenium-sample).
-
-### Executing the Test
-
-**Step 4:** The tests can be executed in the terminal using the following command.
-
-```bash
-mvn test -P single
-```
-
-Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on [LambdaTest automation dashboard](https://automation.lambdatest.com/build). 
-
-## Run Parallel Tests Using JUnit
-
-Check out the [Parallelized.java](https://github.com/LambdaTest/junit-selenium-sample/blob/master/src/test/java/com/lambdatest/Parallelized.java) class we have used for running our Parallel Tests using JUnit.
-
-
-Check out the [JUnitConcurrentTodo.java](https://github.com/LambdaTest/junit-selenium-sample/blob/master/src/test/java/com/lambdatest/JUnitConcurrentTodo.java) file for executing parallel test using JUnit automation framework.
-
-### Executing Parallel Tests Using JUnit
-
-To run parallel tests using **JUnit**, we would have to execute the below command in the terminal:
-
-```bash
-mvn test -P parallel
-```
-
-## Testing Locally Hosted Or Privately Hosted Projects
-
-You can test your locally hosted or privately hosted projects with LambdaTest Selenium grid using LambdaTest Tunnel. All you would have to do is set up an SSH tunnel using tunnel and pass toggle `tunnel = True` via desired capabilities. LambdaTest Tunnel establishes a secure SSH protocol based tunnel that allows you in testing your locally hosted or privately hosted pages, even before they are live.
-
-Refer our [LambdaTest Tunnel documentation](https://www.lambdatest.com/support/docs/testing-locally-hosted-pages/?utm_source=github&utm_medium=repo&utm_campaign=junit-selenium-sample) for more information.
-
-Here’s how you can establish LambdaTest Tunnel.
-
-Download the binary file of:
-* [LambdaTest Tunnel for Windows](https://downloads.lambdatest.com/tunnel/v3/windows/64bit/LT_Windows.zip)
-* [LambdaTest Tunnel for macOS](https://downloads.lambdatest.com/tunnel/v3/mac/64bit/LT_Mac.zip)
-* [LambdaTest Tunnel for Linux](https://downloads.lambdatest.com/tunnel/v3/linux/64bit/LT_Linux.zip)
-
-Open command prompt and navigate to the binary folder.
-
-Run the following command:
-
-```bash
-LT -user {user’s login email} -key {user’s access key}
-```
-So if your user name is lambdatest@example.com and key is 123456, the command would be:
-
-```bash
-LT -user lambdatest@example.com -key 123456
-```
-Once you are able to connect **LambdaTest Tunnel** successfully, you would just have to pass on tunnel capabilities in the code shown below :
-
-**Tunnel Capability**
-
-```java
-DesiredCapabilities capabilities = new DesiredCapabilities();        
-        capabilities.setCapability("tunnel", true);
-```
+3: Go to the same folder, open the “libs” folder, select all the jar files, and click on ‘Open’.
+After adding all these required Jar files, below is the given code to test the login page.
 
 ## Tutorials 📙
 
